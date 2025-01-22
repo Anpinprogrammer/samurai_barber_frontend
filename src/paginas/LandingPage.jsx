@@ -11,7 +11,7 @@ const LandingPage = () => {
       <div>
         <AgendaCita />
       </div>
-      <div id='servicios' className='container sm:h-auto lg:h-screen xs:pr-[30px] xs:pl-[30px] md:pr-0 md:pl-0 sm:py-12 md:pt-16 md:pb-16 lg:py-24'>
+      <div id='servicios' className='container sm:h-auto lg:h-screen xs:px-4 md:px-0 sm:py-12 md:pt-16 md:pb-16 lg:py-24'>
         <Servicios />
       </div>
       <div id='nosotros' className='sm:h-auto md:h-screen sm:pt-8 md:pt-0 lg:pt-8'>

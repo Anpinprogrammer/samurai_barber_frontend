@@ -10,13 +10,13 @@ const FotosServicios = [
     },
     {
         id: 2,
-        servicio: "Perfilamiento de Barba",
+        servicio: "Perfilamiento Barba",
         precio: "$15.000",
         url: "/img/barba.jpeg",
     },
     {
         id: 3,
-        servicio: "Cejas",
+        servicio: "Deliniamiento de Cejas",
         precio: "$10.000",
         url: "/img/cejas.jpeg",
     },
