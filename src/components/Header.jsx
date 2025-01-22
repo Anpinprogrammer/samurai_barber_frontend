@@ -13,7 +13,7 @@ const Header = () => {
                     />
                 </div>
 
-                <div>
+                <div className="xs:mr-[20px] md:mr-0">
                     <MenuHamburguesa />
                     <div className="mx-5 font-mont sm:hidden md:block lg:mt-5">
                         <nav className="flex items-center flex-row gap-4 mt-5 lg:mt-0">

@@ -24,6 +24,7 @@ export default {
       center: true,
     },
     screens: {
+      xs: '270px',
       sm: '390px',
       md: '768px',
       lg: '1024px',

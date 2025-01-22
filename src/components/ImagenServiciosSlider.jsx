@@ -79,7 +79,7 @@ const ImagenServiciosSlider = () => {
                                             </h1>
                                         </div>
                                         <div 
-                                            className='h-[320px] object-cover invisible bg-cover bg-center bg-no-repeat w-full h-[235px] rounded-t-xl'
+                                            className='sm:h-[320px] object-cover invisible bg-cover bg-center bg-no-repeat w-full rounded-t-xl'
                                             style={{ backgroundImage: `url(${item.url})`}}
                                         ></div>
                                         <a href="#" className="card_link">
