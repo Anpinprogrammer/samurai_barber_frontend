@@ -7,7 +7,7 @@ const Nosotros = () => {
     <div className='container mx-auto p-4'>
       <div className='grid md:grid-cols-2 gap-6 text-white pb-4'>
         <div>
-          <h3 className='font-odibee text-4xl mb-2'>NOSOTROS</h3>
+          <h3 className='font-odibee xs:text-3xl md:text-4xl mb-2'>SOBRE NOSOTROS</h3>
           <h1 className='font-odibee text-5xl uppercase font-bold'>bienvenido a samurai barber</h1>
           <p className='font-open'>
             Con mas de diez años de experiencia, nuestro placer es atenderte y cuidar tu imagen, nuestro personal altamente calificado se asegurara de que luzcas tal cual lo deseas, recuerda que la presencia de un hombre esta en su corte de cabello.
