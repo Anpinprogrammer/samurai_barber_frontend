@@ -1,0 +1,11 @@
+/* Cambiar el color de los dots */
+.slick-dots li button::before {
+  @apply text-gray-500; /* Color base de los dots */
+  @apply text-lg; /* Tamaño de los dots */
+}
+
+/* Cambiar el color del dot activo */
+.slick-dots li.slick-active button::before {
+  @apply text-white; /* Color del dot activo */
+}
+

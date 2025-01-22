@@ -1,0 +1,63 @@
+@import url('https://fonts.cdnfonts.com/css/blackletter');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-400px * 5 - 0.5rem * 10));
+  }
+}
+
+@layer components {
+    .card {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+        box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+    }
+      
+      .card__info-hover {
+        position: absolute;
+      }
+      .card:hover .card__info-hover {
+        opacity: 1;
+      }
+      
+      .card__img--hover {
+        transition: 0.2s all ease-out;
+        position: absolute;
+      }
+      
+      .card:hover {
+        box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+        transform: scale(1.1, 1.1);
+      }
+      
+      .card__info {
+        padding: 16px 24px 24px 24px;
+      }
+      
+      .card__title {
+        font-family: "Roboto Slab", serif;
+      }
+      
+      
+      
+      .card:hover .card__info {
+        background-color: transparent;
+      }
+      
+  .animate-scroll {
+    animation: scroll 13s linear infinite;
+  }
+      
+}
+
