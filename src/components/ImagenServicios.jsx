@@ -5,19 +5,19 @@ const FotosServicios = [
         id: 1,
         servicio: "Corte de Cabello Estilo Americano",
         precio: "$20.000",
-        url: "../../public/img/cabello2.jpeg",
+        url: "/img/cabello2.jpeg",
     },
     {
         id: 2,
         servicio: "Perfilamiento de Barba",
         precio: "$15.000",
-        url: "../../public/img/barba.jpeg",
+        url: "/img/barba.jpeg",
     },
     {
         id: 3,
         servicio: "Cejas",
         precio: "$10.000",
-        url: "../../public/img/cejas.jpeg",
+        url: "/img/cejas.jpeg",
     },
 ];
 
