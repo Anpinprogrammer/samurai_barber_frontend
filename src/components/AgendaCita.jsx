@@ -4,7 +4,7 @@ const AgendaCita = () => {
   return (
     <div 
         className="relative w-full sm:h-[400px] md:h-[550px] lg:h-screen bg-contain bg-no-repeat bg-center lg:bg-cover "
-        style={{ backgroundImage: "url('../../public/img/cabello.jpeg')", opacity:0.7}}
+        style={{ backgroundImage: "url('/img/cabello.jpeg')", opacity:0.7}}
     >
         
             <div class="absolute w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-4 justify-center text-white p-2 rounded mr-10">

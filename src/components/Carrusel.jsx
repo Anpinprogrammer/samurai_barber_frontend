@@ -3,23 +3,23 @@ import React from 'react'
 const CarruselFotos = [
     {
         id: 1,
-        url: "../../public/img/cabello2.jpeg",
+        url: "/img/cabello2.jpeg",
     },
     {
         id: 2,
-        url: "../../public/img/barba.jpeg",
+        url: "/img/barba.jpeg",
     },
     {
         id: 3,
-        url: "../../public/img/cejas.jpeg",
+        url: "/img/cejas.jpeg",
     },
     {
         id: 4,
-        url: "../../public/img/1.jpg",
+        url: "/img/1.jpg",
     },
     {
         id: 5,
-        url: "../../public/img/cabello.jpeg",
+        url: "/img/cabello.jpeg",
     },
     
 ];
