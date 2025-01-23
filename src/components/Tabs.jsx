@@ -1,9 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
-import { Link, scroller } from "react-scroll"
+import { Link } from "react-scroll"
 import ImagenServicios from './ImagenServicios'
 import ImagenServiciosSlider from './ImagenServiciosSlider'
-import FormularioCita from './FormularioCita'
+
+import useAuth from '../hooks/useAuth'
 
 const Servicios = [
     {
@@ -25,23 +26,11 @@ const Servicios = [
 
 const Tabs = () => {
 
+    const { agendarCita } = useAuth();
     const [toggleState, setToggleState] = useState(1);
-    const [reserva, setReserva] = useState(false);
 
     const toggleTab = (index) => {
         setToggleState(index);
-    }
-
-    const agendarCita = () => {
-        setReserva(true);
-
-        setTimeout(() => {
-            scroller.scrollTo('formulario-cita', {
-                smooth: true,
-                duration: 500,
-                offset: -50,
-            });
-        }, 100);
     }
 
   return (
@@ -112,9 +101,7 @@ const Tabs = () => {
             
         </div>
 
-        <div id='formulario-cita' className={` ${ reserva ? 'block' : 'hidden' } mt-10`}>
-            <FormularioCita />
-        </div>
+        
         
         
     </div>

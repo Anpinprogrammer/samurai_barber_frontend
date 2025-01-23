@@ -1,9 +1,14 @@
 import React from 'react'
 import { FaTiktok, FaInstagram, FaWhatsapp } from 'react-icons/fa';/**Iconos de redes sociales*/
 import { HiLocationMarker } from 'react-icons/hi';/** */
-import { MdComputer } from 'react-icons/md';/** */
+import { Link } from 'react-scroll';
+
+import useAuth from '../hooks/useAuth';
 
 const Footer = () => {
+
+    const { agendarCita } = useAuth();
+
   return (
     <div className='rounded-t-3xl container'>
         <div>
@@ -30,9 +35,16 @@ const Footer = () => {
                                 </a>
                             </li>
                             <li>
-                                <a href="#" className='hover:text-white/50 duration-200'>
+                                <Link 
+                                    to="formulario-cita" 
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        agendarCita();
+                                    }}
+                                    className='hover:text-white/50 duration-200 cursor-pointer'
+                                >
                                     Agendar Cita
-                                </a>
+                                </Link>
                             </li>
                             <li>
                                 <a href="#" className='hover:text-white/50 duration-200'>

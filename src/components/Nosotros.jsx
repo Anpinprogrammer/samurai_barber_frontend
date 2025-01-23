@@ -1,7 +1,12 @@
 import React from 'react'
 import Carrusel from './Carrusel'
 
+import useAuth from '../hooks/useAuth'
+
 const Nosotros = () => {
+
+  const { agendarCita } = useAuth();
+
   return (
     <>
     <div className='container mx-auto p-4'>
@@ -22,7 +27,10 @@ const Nosotros = () => {
           </p>
 
           <div className='text-black p-4 text-center'>
-            <button className='uppercase bg-white space-between uppercase font-open text-2xl font-bold hover:bg-white/70 cursor-pointer transition-colors py-2 px-4 rounded-full shadow cursor-pointer'>
+            <button 
+              className='uppercase bg-white space-between uppercase font-open sm:text-lg md:text-2xl font-bold hover:bg-white/70 cursor-pointer transition-colors py-2 px-4 rounded-full shadow cursor-pointer'
+              onClick={agendarCita}
+            >
             agendar cita
             </button>
           </div>

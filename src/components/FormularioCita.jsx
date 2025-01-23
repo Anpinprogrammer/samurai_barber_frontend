@@ -25,7 +25,7 @@ const FormularioCita = () => {
                     className="text-white uppercase font-bold"
                 >Nombre</label>
                 <input 
-                    id="propietario"
+                    id="nombre-cliente"
                     type="text"
                     placeholder="Tu Nombre"
                     className="border-2 w-full p-2 mt-2 placeholder-gray-400 bg-transparent"
