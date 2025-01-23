@@ -1,19 +1,48 @@
 import React from 'react'
 import { useState } from 'react';
+import Alerta from './Alerta';
+
+import useAuth from '../hooks/useAuth';
 
 const FormularioCita = () => {
 
+    const { setReserva } = useAuth();
+
     const [visible, setVisible] = useState(true);
+
+    const [nombre, setNombre] = useState('');
+    const [telefono, setTelefono] = useState('');
+    const [fecha, setFecha] = useState('');
+    const [barbero, setBarbero] = useState('');
+    const [servicio, setServicio] = useState('');
+
+    const [alerta, setAlerta] = useState({});
 
     const handleSubmit = e => {
         e.preventDefault();
-        const prueba = 'una prueba';
-        window.open(`https://wa.me/3146098819?text=${prueba}%20Hola,%20quiero%20agendar%20una%20cita%20para%20cortarme%20el%20cabello.`, '_blank');
-        setVisible(false);
+        if([nombre, telefono, fecha, barbero, servicio].includes('')) {
+            setAlerta({
+                msg: 'Uno o mas campos estan vacios',
+                error: true
+            });
+            return;
+        }
+        window.open(`https://wa.me/3146098819?text=Hola,%20quiero%20agendar%20una%20cita%20con%20la%20siguiente%20informacion:%0A%20Cliente:%20${nombre}%0A%20Telefono:%20${telefono}%0A%20Fecha:%20${fecha}%0A%20Barbero:%20${barbero}%0A%20Servicio:%20${servicio}`, '_blank');
+        setReserva(false);
+        setNombre('')
+        setTelefono('')
+        setFecha('')
+        setBarbero('')
+        setServicio('')
     }
+
+    const { msg } = alerta;
   return (
     <div className={` ${ visible ? 'block' : 'hidden' } `}>
         <h1 className='md:pt-8 sm:pb-6 md:pb-0 uppercase text-white text-5xl text-center font-odibee'>Completa tu Reserva</h1>
+        {msg && <Alerta 
+            alerta={alerta}
+        />}
         <form
             className="bg-transparent pb-10 px-5 lg:mb-5 shadow-md font-mont"
             onSubmit={handleSubmit}
@@ -28,7 +57,9 @@ const FormularioCita = () => {
                     id="nombre-cliente"
                     type="text"
                     placeholder="Tu Nombre"
-                    className="border-2 w-full p-2 mt-2 placeholder-gray-400 bg-transparent"
+                    className="border-2 w-full p-2 mt-2 placeholder-gray-400 bg-transparent text-white"
+                    value={nombre}
+                    onChange={ e => setNombre(e.target.value) }
                 />
             </div>
 
@@ -41,7 +72,9 @@ const FormularioCita = () => {
                     id="telefono"
                     type="tel"
                     placeholder="Tu Telefono"
-                    className="border-2 w-full p-2 mt-2 placeholder-gray-400 bg-transparent"
+                    className="border-2 w-full p-2 mt-2 placeholder-gray-400 bg-transparent text-white"
+                    value={telefono}
+                    onChange={ e => setTelefono(e.target.value) }
                 />
             </div>
 
@@ -54,6 +87,8 @@ const FormularioCita = () => {
                     id="fecha"
                     type="date"
                     className="border-2 w-full p-2 mt-2"
+                    value={fecha}
+                    onChange={ e => setFecha(e.target.value) }
                 />
             </div>
 
@@ -61,7 +96,11 @@ const FormularioCita = () => {
                 <label 
                     htmlFor="select-barbero" 
                     className="block text-white uppercase font-bold">Barberos</label>
-                <select id="select-barbero" name="select-barbero" className="border-2 w-full p-2 mt-2 bg-transparent block appearance-none py-2 px-3 pr-10 text-gray-400">
+                <select 
+                    id="select-barbero" name="select-barbero" className="border-2 w-full p-2 mt-2 bg-transparent block appearance-none py-2 px-3 pr-10 text-gray-400" 
+                    value={barbero}
+                    onChange={ e => setBarbero(e.target.value) }
+                >
                     <option value="" disabled selected>Elige Tu Barbero</option>
                     <option value="1">Barbero 1</option>
                     <option value="2">Barbero 2</option>
@@ -78,7 +117,11 @@ const FormularioCita = () => {
                 <label 
                     htmlFor="select-servicio" 
                     className="block text-white uppercase font-bold">Servicio</label>
-                <select id="select-servicio" name="select-servicio" className="border-2 w-full p-2 mt-2 bg-transparent block appearance-none py-2 px-3 pr-10 text-gray-400">
+                <select 
+                    id="select-servicio" name="select-servicio" className="border-2 w-full p-2 mt-2 bg-transparent block appearance-none py-2 px-3 pr-10 text-gray-400"
+                    value={servicio}
+                    onChange={ e => setServicio(e.target.value) }    
+                >
                     <option value="" disabled selected>Elige Tu Servicio</option>
                     <option value="1">Servicio 1</option>
                     <option value="2">Servicio 2</option>

@@ -24,7 +24,8 @@ const AuthProvider = ({children}) => {
     <AuthContext.Provider
         value={{
             agendarCita,
-            reserva
+            reserva,
+            setReserva
         }}
     >
         {children}

@@ -92,9 +92,17 @@ const Tabs = () => {
             >
                 <h1 className='text-5xl mt-5 pb-4 text-white font-odibee uppercase'>Catalogo</h1>
                 <div className='text-center p-4'>
-                    <button className='uppercase bg-white space-between uppercase font-open sm:text-lg md:text-2xl font-bold hover:bg-white/70 cursor-pointer transition-colors py-2 px-4 rounded-full shadow cursor-pointer'>
+                    <Link 
+                        to='formulario-cita'  
+                        onClick={(e) => {
+                            e.preventDefault();
+                            agendarCita();
+                        }}
+                        smooth={true} duration={500}
+                        className='uppercase bg-white space-between uppercase font-open sm:text-lg md:text-2xl font-bold hover:bg-white/70 cursor-pointer transition-colors py-2 px-4 rounded-full shadow cursor-pointer'   
+                    >
                         agendar cita
-                    </button>
+                    </Link>
                 </div>
             </div>
 
