@@ -15,7 +15,7 @@ const FotosServicios = [
     },
     {
         id: 3,
-        servicio: "Cejas",
+        servicio: "Deliniamiento de Cejas",
         precio: "$10.000",
         url: "/img/cejas.jpeg",
     },
@@ -38,6 +38,11 @@ const ImagenServicios = () => {
                                     <h1 className='text-black text-4xl font-odibee'>
                                         {item.precio}
                                     </h1>
+                                    <div className='mt-[120px] text-center'>
+                                                <button    className=' bg-black space-between font-open text-white text-2xl font-bold  cursor-pointer transition-colors py-2 px-4 rounded-full shadow cursor-pointer'>
+                                                    ¡ Lo Quiero !
+                                                </button>
+                                    </div>
                                 </div>
                                 <div 
                                     className='h-[320px] object-cover invisible bg-cover bg-center bg-no-repeat w-full h-[235px] rounded-t-xl'

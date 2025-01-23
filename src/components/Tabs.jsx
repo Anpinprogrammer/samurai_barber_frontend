@@ -1,7 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
+import { Link, scroller } from "react-scroll"
 import ImagenServicios from './ImagenServicios'
 import ImagenServiciosSlider from './ImagenServiciosSlider'
+import FormularioCita from './FormularioCita'
 
 const Servicios = [
     {
@@ -24,9 +26,22 @@ const Servicios = [
 const Tabs = () => {
 
     const [toggleState, setToggleState] = useState(1);
+    const [reserva, setReserva] = useState(false);
 
     const toggleTab = (index) => {
         setToggleState(index);
+    }
+
+    const agendarCita = () => {
+        setReserva(true);
+
+        setTimeout(() => {
+            scroller.scrollTo('formulario-cita', {
+                smooth: true,
+                duration: 500,
+                offset: -50,
+            });
+        }, 100);
     }
 
   return (
@@ -68,9 +83,17 @@ const Tabs = () => {
                 </div>
 
                 <div className='text-center p-4'>
-                    <button className='uppercase bg-white space-between uppercase font-open text-2xl font-bold hover:bg-white/70 cursor-pointer transition-colors py-2 px-4 rounded-full shadow cursor-pointer'>
+                    <Link 
+                        to='formulario-cita'  
+                        onClick={(e) => {
+                            e.preventDefault();
+                            agendarCita();
+                        }}
+                        smooth={true} duration={500}
+                        className='uppercase bg-white space-between uppercase font-open sm:text-lg md:text-2xl font-bold hover:bg-white/70 cursor-pointer transition-colors py-2 px-4 rounded-full shadow cursor-pointer'   
+                    >
                         agendar cita
-                    </button>
+                    </Link>
                 </div>
             </div>
 
@@ -80,13 +103,17 @@ const Tabs = () => {
             >
                 <h1 className='text-5xl mt-5 pb-4 text-white font-odibee uppercase'>Catalogo</h1>
                 <div className='text-center p-4'>
-                    <button className='uppercase bg-white space-between uppercase font-open text-2xl font-bold hover:bg-white/70 cursor-pointer transition-colors py-2 px-4 rounded-full shadow cursor-pointer'>
+                    <button className='uppercase bg-white space-between uppercase font-open sm:text-lg md:text-2xl font-bold hover:bg-white/70 cursor-pointer transition-colors py-2 px-4 rounded-full shadow cursor-pointer'>
                         agendar cita
                     </button>
                 </div>
             </div>
 
             
+        </div>
+
+        <div id='formulario-cita' className={` ${ reserva ? 'block' : 'hidden' } mt-10`}>
+            <FormularioCita />
         </div>
         
         
