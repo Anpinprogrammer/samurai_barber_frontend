@@ -8,8 +8,6 @@ const FormularioCita = () => {
 
     const { setReserva } = useAuth();
 
-    const [visible, setVisible] = useState(true);
-
     const [nombre, setNombre] = useState('');
     const [telefono, setTelefono] = useState('');
     const [fecha, setFecha] = useState('');
@@ -38,7 +36,7 @@ const FormularioCita = () => {
 
     const { msg } = alerta;
   return (
-    <div className={` ${ visible ? 'block' : 'hidden' } `}>
+    <div>
         <h1 className='md:pt-8 sm:pb-6 md:pb-0 uppercase text-white text-5xl text-center font-odibee'>Completa tu Reserva</h1>
         {msg && <Alerta 
             alerta={alerta}
