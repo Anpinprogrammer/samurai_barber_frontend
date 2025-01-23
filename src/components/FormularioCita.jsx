@@ -25,7 +25,9 @@ const FormularioCita = () => {
             });
             return;
         }
-        window.open(`https://wa.me/3146098819?text=Hola,%20quiero%20agendar%20una%20cita%20con%20la%20siguiente%20informacion:%0A%20Cliente:%20${nombre}%0A%20Telefono:%20${telefono}%0A%20Fecha:%20${fecha}%0A%20Barbero:%20${barbero}%0A%20Servicio:%20${servicio}`, '_blank');
+        setAlerta({})
+
+        window.open(`https://wa.me/3146098819?text=Hola,%20quiero%20agendar%20una%20cita%20con%20la%20siguiente%20informacion:%0A%0ACliente:%20${nombre}%0ATelefono:%20${telefono}%0AFecha:%20${fecha}%0ABarbero:%20${barbero}%0AServicio:%20${servicio}`, '_blank');
         setReserva(false);
         setNombre('')
         setTelefono('')
