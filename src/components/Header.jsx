@@ -1,5 +1,6 @@
 import { Link } from "react-scroll"
 import MenuHamburguesa from "./MenuHamburguesa"
+import BtnLoginRegis from "./BtnLoginRegis"
 
 const Header = () => {
   return (
@@ -23,18 +24,7 @@ const Header = () => {
                             <Link to="contacto" smooth={true} duration={500} className="text-white md:text-xl lg:text-2xl cursor-pointer">Contacto</Link>
 
                             <div className="flex flex-col">
-                                <button
-                                    type="button"
-                                    className="text-white text-md uppercase"
-                                >
-                                    Iniciar Sesion
-                                </button>
-                                <button
-                                    type="button"
-                                    className="text-white text-md uppercase"
-                                >
-                                    Registrarme
-                                </button>
+                                <BtnLoginRegis />
                             </div>
                         </nav>
                     </div>

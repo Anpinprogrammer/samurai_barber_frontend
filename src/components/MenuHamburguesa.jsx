@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { Link } from "react-scroll"
+import BtnLoginRegis from './BtnLoginRegis'
 
 const MenuHamburguesa = () => {
 
@@ -33,18 +34,7 @@ const MenuHamburguesa = () => {
                 <Link to="contacto" smooth={true} duration={500} className="text-black hover:text-gray-400 text-lg cursor-pointer transition">Contacto</Link>
             
                 <div className="flex flex-col">
-                    <button
-                        type="button"
-                        className="text-black text-sm uppercase"
-                    >
-                        Iniciar Sesion
-                    </button>
-                    <button
-                        type="button"
-                        className="text-black text-sm uppercase"
-                    >
-                        Registrarme
-                    </button>
+                    <BtnLoginRegis />
                 </div>
             </nav>
         </div>
